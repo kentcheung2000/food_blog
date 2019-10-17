@@ -1,0 +1,2 @@
+module RestaurantFoodHelper
+end
