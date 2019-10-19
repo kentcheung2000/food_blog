@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FoodBlog</title>
+    <title>Food Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,10 @@
   </head>
 
   <body>
+
+
+ 
+    
   <div class="container-fluid">
       <% flash.each do |type, message| %>
         <div class="alert alert-<%= type == "alert" ? "danger" : "success" %>" role="alert">

@@ -1,0 +1,13 @@
+<h1>Outing Index Page</h1>
+
+<% @outings.each do |outing| %>
+
+<h5><%= link_to outing.description, outing_path(outing) %></h5>
+<%=  outing.meeting_date %></br>
+<%=  outing.meeting_time %></br>
+<%=  outing.total %></br>
+<%=  outing.restaurant.name %>
+
+<p>
+
+<% end %>

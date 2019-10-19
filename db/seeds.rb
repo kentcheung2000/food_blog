@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-RestaurantFood.delete_all
-FoodOrder.delete_all
-Restaurant.delete_all
 Outing.delete_all
+RestaurantFood.delete_all
+Restaurant.delete_all
+FoodOrder.delete_all
+
 User.delete_all
 
 PASSWORD = "123"
@@ -60,6 +60,7 @@ NUM_OF_RESTAURANT.times do
         name: Faker::Food.dish,
         description: Faker::Food.description,
         price: Faker::Number.decimal(l_digits: 2),
+        restaurant: r
       )
     end
   end
@@ -92,10 +93,13 @@ NUM_OF_OUTING.times do
   end
 end
 
+ 
+
 outings = Outing.all
 
 puts "Created #{User.count} users"
 puts "Created #{Restaurant.count} restaurants"
 puts "Created #{Outing.count} outings"
+puts "Created #{FoodOrder.count} food orders"
 puts "Login as admin with #{super_user.email} and password of '#{PASSWORD}'!"
 

@@ -1,0 +1,21 @@
+<h1>Show outing </h1>
+
+<h3> <%= @outing.description %> </h1>
+<%=  @outing.meeting_date %></br>
+<%=  @outing.meeting_time %></br>
+<%=  @outing.total %></br>
+<%=  @outing.restaurant.name %>
+<p>
+<p>
+
+<% @food_orders.each do |food_order| %>
+  <p>
+  <%= food_order.description %>
+  <%= food_order.restaurant.restaurant_food %>
+
+
+
+  <p>
+
+<% end %>
+
