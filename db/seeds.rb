@@ -83,7 +83,7 @@ NUM_OF_OUTING.times do
   })
 
   if o.valid?
-    rand(0..15).times.each do
+    rand(2..6).times.each do
       FoodOrder.create(
         description: Faker::ChuckNorris.fact,
         outing: o,

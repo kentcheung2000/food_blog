@@ -11,12 +11,10 @@ class OutingsController < ApplicationController
   def show
 
     @outing = Outing.find(params[:id]) 
-    
-    @food_orders = @outing.food_orders(created_at: :desc)
-    #@food_order = FoodOrder.new
-    # byebug
+    @food_orders = @outing.restaurant.restaurant_foods
     
 
+   
   end
 
   def new
