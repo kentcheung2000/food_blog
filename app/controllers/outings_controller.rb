@@ -1,7 +1,7 @@
 class OutingsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
-  # before_action :find_outing, only: [:show, :edit, :update, :destroy]
+  before_action :find_outing, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
@@ -12,7 +12,9 @@ class OutingsController < ApplicationController
 
     @outing = Outing.find(params[:id]) 
     @food_orders = @outing.food_orders.order(created_at: :desc)
-    #@food_orders = @outing.restaurant.restaurant_foods
+    @restaurant_foods = @outing.restaurant.restaurant_foods
+    @food_order = FoodOrder.new
+    #byebug
     
   end
 
@@ -24,7 +26,6 @@ class OutingsController < ApplicationController
     @outing = Outing.new outing_params
     @outing.user = current_user
     if @outing.save
-      # byebug
       #flash[:success] = "Outing created!"
       redirect_to @outing
     else
@@ -37,6 +38,7 @@ class OutingsController < ApplicationController
   end
 
   def update
+    byebug
     
   end
 
@@ -50,9 +52,18 @@ class OutingsController < ApplicationController
   end
 
   def outing_params
-    params.require(:outing).permit(:description, :meeting_date, :meeting_time, :total, :restaurant_id)
-    
+    params.require(:outing).permit(:description, :meeting_date, :meeting_time, :total, :restaurant_id)  
   end
+
+   def authorize_user!
+   
+    @outing = find_outing
+    unless can?(:manage, @outing)
+      #flash[:alert] = "Please sign in"
+      redirect_to root_path
+    end
+  end
+
 
   
 

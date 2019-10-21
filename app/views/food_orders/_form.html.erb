@@ -1,0 +1,11 @@
+<%= form_with(model: [@outing, @food_order], local:true) do |f| %>
+
+  <div class="form-group">
+    <%= f.select :restaurant_food_id, options_for_select(@restaurant_foods.map{|r|[r.name, r.id]}) %>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-outline-primary" %>
+<% end %>
+
+
+

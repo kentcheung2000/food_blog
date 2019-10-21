@@ -20,14 +20,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authorize_user!
-    #resource = instance_variable_get("@#{controller_name.singularize}")
+  # def authorize_user!
+  #   #resource = instance_variable_get("@#{controller_name.singularize}")
 
-    unless can?(:manage, resource)
-      flash[:alert] = "Please sign in"
-      redirect_to root_path
-    end
-  end
+  #   unless can?(:manage, resource)
+  #     flash[:alert] = "Please sign in"
+  #     redirect_to root_path
+  #   end
+  # end
 
 
 end

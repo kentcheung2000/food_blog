@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   
   resources :users, only:[:new, :create]
 
-  resources :outings 
+  resources :outings do
+    resources :food_orders, shallow: true, only: [:create, :destroy]
+  end
 
   get('/', {to: 'sessions#new', as: 'root'})
 

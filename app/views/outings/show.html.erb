@@ -4,9 +4,14 @@
 Meeting Date: <%=  @outing.meeting_date %></br>
 Meeting Time: <%=  @outing.meeting_time %></br>
 Total Spend: <%=  @outing.total %></br>
-Restaurant Name: <%=  @outing.restaurant.name %>
+Restaurant Name: <%=  @outing.restaurant.name %></br>
+Restaurant ID: <%=  @outing.restaurant.id %>
 <p>
 <p>
+
+<%= render 'food_orders/form' %>
+
+
 
 <% @food_orders.each do |food_order| %>
 
@@ -14,8 +19,6 @@ Restaurant Name: <%=  @outing.restaurant.name %>
   Food Name:  <%= food_order.restaurant_food.name %><br>
   Food Description:  <%= food_order.restaurant_food.description %><br>
   Food Pice:  <%= food_order.restaurant_food.price %><br>
-  
-
   <p>
 
 <% end %>
