@@ -1,0 +1,32 @@
+<h1>New Outing</h1>
+
+<%= form_for @outing do |f| %>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :meeting_date %>
+    <%= f.date_field :meeting_date, data:{ provide:'datepicker' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :meeting_time %>
+    <%= f.time_field :meeting_time, data:{ provide:'timepicker' } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :total %>
+    <%= f.number_field :total,  step: :any, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :restaurant %>
+    <%= f.select :restaurant_id, options_for_select(Restaurant.all.map{|r|[r.name, r.id]}) %>
+  </div>
+
+  <%= f.submit class: "btn btn-outline-primary" %>
+<% end %>
+
+

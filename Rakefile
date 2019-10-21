@@ -3,7 +3,6 @@
 
 require_relative 'config/application'
 
-require "rails_erd/diagram/graphviz"
-RailsERD::Diagram::Graphviz.create
+
 
 Rails.application.load_tasks

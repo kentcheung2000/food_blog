@@ -11,9 +11,11 @@ Restaurant Name: <%=  @outing.restaurant.name %>
 <% @food_orders.each do |food_order| %>
 
   <p>
-  Food Name:  <%= food_order.name %><br>
-  Food Description: <%= food_order.description %><br>
-  Food Price: <%= food_order.price %><br>
+  Food Name:  <%= food_order.restaurant_food.name %><br>
+  Food Description:  <%= food_order.restaurant_food.description %><br>
+  Food Pice:  <%= food_order.restaurant_food.price %><br>
+  
+
   <p>
 
 <% end %>
