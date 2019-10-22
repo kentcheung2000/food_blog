@@ -11,10 +11,10 @@
 
 FoodOrder.delete_all
 RestaurantFood.delete_all
-
 Outing.delete_all
 Restaurant.delete_all
 User.delete_all
+
 
 
 
@@ -60,7 +60,7 @@ NUM_OF_RESTAURANT.times do
   })
 
   if r.valid?
-    rand(2..10).times.each do
+    rand(2..7).times.each do
       RestaurantFood.create(
         name: Faker::Food.dish,
         description: Faker::Food.description,
@@ -88,10 +88,11 @@ NUM_OF_OUTING.times do
   })
 
   if o.valid?
-    rand(3..9).times.each do
+    rand(3..3).times.each do
       FoodOrder.create(
         description: Faker::ChuckNorris.fact,
         outing: o,
+        user: users.sample,
         restaurant_food: restaurant.restaurant_foods.sample
       )
     end

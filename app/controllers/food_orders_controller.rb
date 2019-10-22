@@ -5,8 +5,6 @@ class FoodOrdersController < ApplicationController
   before_action :authorize_user!, only: [:destroy]
 
   
-
-  
     def create
         
         @food_order = FoodOrder.new food_order_params
