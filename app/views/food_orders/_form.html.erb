@@ -4,8 +4,9 @@
     <%= f.select :restaurant_food_id, options_for_select(@restaurant_foods.map{|r|[r.name, r.id]}) %>
   </div>
 
-  <%= f.submit "Submit", class: "btn btn-outline-primary" %>
-<% end %>
+  <%= f.submit "Add Order", class: "btn btn-outline-primary" %>
 
+<% end %>
+<p>
 
 
