@@ -38,11 +38,18 @@ class OutingsController < ApplicationController
   end
 
   def update
-    byebug
-    
+    if @outing.update outing_params
+      redirect_to outing_path(@outing)
+    else
+      rener :edit
+    end 
   end
 
   def destroy
+    #flash[:notice] = "Outing Deleted!"
+    @outing.destroy
+    redirect_to outings_path
+
   end
 
   private
@@ -55,7 +62,7 @@ class OutingsController < ApplicationController
     params.require(:outing).permit(:description, :meeting_date, :meeting_time, :total, :restaurant_id)  
   end
 
-   def authorize_user!
+  def authorize_user!
    
     @outing = find_outing
     unless can?(:manage, @outing)

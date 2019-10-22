@@ -32,7 +32,7 @@ class FoodOrdersController < ApplicationController
 
     private
 
-    def food_order
+    def find_food_order
         @food_order = FoodOrder.find params[:id]
     end
 

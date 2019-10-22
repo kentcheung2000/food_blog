@@ -35,7 +35,10 @@ class Ability
     can :manage, Outing do |o|
       user == o.user
     end
-  
+
+    can :manage, FoodOrder do |f|
+      user == f.user
+    end  
   
     can :manage, User do |u|
       user == u
