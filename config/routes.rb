@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     resources :food_orders, shallow: true, only: [:create, :destroy]
   end
 
+  resources :restaurants do
+    resources :restaurant_foods, shallow: true, only: [:create, :destroy]
+  end
+
   get('/', {to: 'sessions#new', as: 'root'})
 
 end
