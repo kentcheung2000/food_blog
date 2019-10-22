@@ -21,8 +21,8 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    # @restaurant_food = RestaurantFood.new
-    # @restaurant_foods = @Restaurant.restaurant_foods.order(created_at: :desc)  
+    @restaurant_food = RestaurantFood.new
+    @restaurant_foods = @restaurant.restaurant_foods.order(created_at: :desc)  
   end
 
   def edit

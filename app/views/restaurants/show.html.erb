@@ -8,3 +8,31 @@
 <%=  @restaurant.web_address %>
 <p>
 
+<div class="owner-controls mb-4">
+    <% if can?(:crud, @restaurant) %>
+      <%= link_to "Edit", edit_restaurant_path(@restaurant), :class => "btn btn-outline-primary" %>
+      <%= link_to "Delete", restaurant_path(@restaurant), :class => "btn btn-outline-primary", method: :delete, data: {confirm: "Are you sure?"} %>  
+    <% end %>
+</div>
+
+
+<h3>Add Restaurant Food</h3>
+
+<%= render 'restaurant_foods/form' %>
+
+<% @restaurant_foods.each do |restaurant_food| %>
+
+  <p>
+  Food Name:  <%= restaurant_food.name %><br>
+  Food Description:  <%= restaurant_food.description %><br>
+  Food Pice:  <%= restaurant_food.price %><br>
+  <p>
+
+<% end %>
+
+
+
+
+
+
+

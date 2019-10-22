@@ -1,3 +1,0 @@
-class RestaurantFoodController < ApplicationController
-  
-end
