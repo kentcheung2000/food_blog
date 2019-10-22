@@ -4,6 +4,11 @@ class OutingsController < ApplicationController
   before_action :find_outing, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
+  
+  def new
+    @outing = Outing.new
+  end
+  
   def index
     @outings = Outing.order(created_at: :desc)
   end
@@ -18,9 +23,7 @@ class OutingsController < ApplicationController
     
   end
 
-  def new
-    @outing = Outing.new
-  end
+  
 
   def create
     @outing = Outing.new outing_params
@@ -30,6 +33,7 @@ class OutingsController < ApplicationController
       redirect_to @outing
     else
       #flash.now[:alert] = @outing.errors.full_messages.", "
+     
       render :new
     end
   end

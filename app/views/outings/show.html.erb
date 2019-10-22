@@ -9,9 +9,22 @@ Restaurant ID: <%=  @outing.restaurant.id %>
 <p>
 <p>
 
+<% if can?(:crud, @outing) %>
+  <div class="owner-controls mb-4">
+    <%= link_to "Edit", edit_outing_path(@outing), :class => "btn "%>  
+  </div>
+  <div class="owner-controls mb-4">
+    <%= link_to "Delete", outing_path(@outing), :class => "btn", method: :delete, data: {confirm: "Are you sure?"} %>
+  </div>
+<% end %>
+
+<p>
+<p>
+
+
+<h3>Add Food Order</h3>
+
 <%= render 'food_orders/form' %>
-
-
 
 <% @food_orders.each do |food_order| %>
 
