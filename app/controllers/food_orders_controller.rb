@@ -1,8 +1,9 @@
 class FoodOrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_outing
+  
   before_action :find_food_order, only: [:destroy, :update]
-  before_action :authorize_user!, only: [:destroy]
+  before_action :find_outing
+#   before_action :authorize_user!, only: [:destroy]
 
   
     def create
@@ -33,11 +34,11 @@ class FoodOrdersController < ApplicationController
     private
 
     def find_food_order
-        @food_order = FoodOrder.find params[:id]
+        @food_order = FoodOrder.find params[:id] if params[:id].present?
     end
 
     def find_outing
-        @outing = Outing.find params[:outing_id]
+        @outing = Outing.find params[:outing_id] if params[:outing_id].present?
     end
 
     def food_order_params
