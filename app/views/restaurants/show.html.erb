@@ -27,6 +27,12 @@
   Food Description:  <%= restaurant_food.description %><br>
   Food Pice:  <%= restaurant_food.price %><br>
   <p>
+
+  <small> 
+  <% if can?(:delete, restaurant_food) %>
+    <%= link_to 'Delete', restaurant_food_path(restaurant_food), method: :delete %>
+  <% end %>
+</small>
   
  
 

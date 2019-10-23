@@ -32,11 +32,12 @@ Restaurant ID: <%=  @outing.restaurant.id %>
   Food Pice:  <%= food_order.restaurant_food.price %><br>
   <p>
 
-  <small> 
-    <% if can?(:delete, food_order) %>
-      <%= link_to 'Delete', food_order_path(food_order), method: :delete %>
-    <% end %>
-  </small>
+  <% if can?(:delete, food_order) %>
+    <%= link_to 'Delete', food_order_path(food_order), method: :delete %>
+  <% end %>
+</small>
+  
+  
 
 <% end %>
 

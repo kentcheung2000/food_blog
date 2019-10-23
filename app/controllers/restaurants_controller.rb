@@ -41,7 +41,7 @@ class RestaurantsController < ApplicationController
 
   def destroy
     @restaurant.destroy
-    flash[:success] = "Restaurant deleted"
+    #flash[:success] = "Restaurant deleted"
     redirect_to restaurants_path
   end
 
