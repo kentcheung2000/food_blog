@@ -1,0 +1,25 @@
+
+.session-bg{
+  height: 100%;
+ 
+  background-image: url("login_background.jpg");
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+}
+
+.login{
+
+  display: flex;
+  align-items: right;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  padding: 50px;
+  background-color: white;
+  
+  border: 1px solid brown;
+
+}
