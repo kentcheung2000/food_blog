@@ -1,24 +1,40 @@
-<body class="session-bg">
+<div class="session-bg">
+    <div class="hero-branding">
+      <h1>Restaurant Diary</h1>
+    </div>
+
+
+
 
 <section class="login">
 <%= form_for :session, url: sessions_path do |f| %>
-  <div >
+<div class="sign-in-form" >
+  <div class="email">
     <%= f.label :email %>
-    <%= f.email_field :email, class: "form-control" %>
+    <%= f.email_field :email %>
   </div>
-  <p>
+  
 
-  <div >
+  <div class="password">
     <%= f.label :password %>
-    <%= f.password_field :password, class: "form-control" %>
+    <%= f.password_field :password %>
   </div>
-  <p>
-  <%= f.submit "Sign In", class: "btn btn-outline-primary" %>
+  
+  <div class="submit-button">
+  <%= f.submit "Sign In" %>
+  </div>
+</div>
+
   
 <% end %>
 </section>
 
-</body>
+</div>
+
+
+
+
+
 
 
 

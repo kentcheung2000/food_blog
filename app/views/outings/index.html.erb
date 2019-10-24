@@ -1,13 +1,24 @@
-<h1>Outing Index Page</h1>
+<div class="container">
 
-<% @outings.each do |outing| %>
+  <div class="outing-card">
+   
+   
+      <% @outings.each do |outing| %>
+        <div class="outing-picture"><img src="https://source.unsplash.com/random/300x300?"></div>
+        <div class="outing-details">
+        <h4 class="outing-title"><%= link_to outing.description, outing_path(outing) %></h4>
+        <h5 class="outing-description"><%= link_to outing.description, outing_path(outing) %></h5>
+            <p class="meeting-date"><strong>Date:</strong> <%=  outing.meeting_date %></p>
+            <p class="meeting-time"><strong>Time:</strong> <%=  outing.meeting_time %></p>
+            <p class="meeting-total-price"><strong>Price:</strong> <%=  outing.total %></p>
+            <p class="meeting-restaurant-name"><strong>Restaurant:</strong> <%=  outing.restaurant.name %></p>
+            </div>
+      <% end %>
+      
+    
+  </div>
+  
+  
+  
 
-<h5><%= link_to outing.description, outing_path(outing) %></h5>
-<%=  outing.meeting_date %></br>
-<%=  outing.meeting_time %></br>
-<%=  outing.total %></br>
-<%=  outing.restaurant.name %>
-
-<p>
-
-<% end %>
+</div>
