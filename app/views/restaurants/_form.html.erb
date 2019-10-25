@@ -1,24 +1,34 @@
+<div class="container">
+
+
 <%= form_for @restaurant do |f| %>
-  <div class="form-group">
+  <div>
     <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
+    <%= f.text_field :name %>
   </div>
 
-  <div class="form-group">
+  <div>
     <%= f.label :address %>
-    <%= f.text_field :address, class: "form-control" %>
+    <%= f.text_field :address %>
   </div>
 
-  <div class="form-group">
+  <div>
     <%= f.label :phone_number %>
-    <%= f.text_field :phone_number, class: "form-control" %>
+    <%= f.text_field :phone_number %>
   </div>
 
-  <div class="form-group">
+  <div>
     <%= f.label :web_address %>
-    <%= f.text_field :web_address, class: "form-control" %>
+    <%= f.text_field :web_address %>
   </div>
 
-  <%= f.submit class: "btn btn-outline-primary" %>
+  <div >
+    <%= f.label :restaurant_picture %>
+    <%= f.file_field :restaurant_picture %>
+  </div>
 
-  <% end %>
+  <%= f.submit %>
+
+<% end %>
+
+</div>

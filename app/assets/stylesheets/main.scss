@@ -117,6 +117,8 @@ label, input {display: block; width: 98%; margin-bottom: .3em; font-family: var(
   padding: 3em;
   
 }
+
+  /* Outing Page */
   
   .outing-card{
     display: flex;
@@ -147,6 +149,36 @@ label, input {display: block; width: 98%; margin-bottom: .3em; font-family: var(
   
   }
 
+  /* Restaurant Page */
+
+  .restaurant-card{
+    display: flex;
+    flex-direction: row;
+    background-color: orange;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+   
+  }
+  
+  .restaurant-picture{
+    width: 30%;
+    background-color: yellow;
+  
+  }
+  
+  .restaurant-title{
+    font-size: 2em;
+  
+  }
+  
+  .restaurant-details{
+  
+    background-color: lightblue;
+    width: 70%;
+    padding: 1em;
+  
+  }
 
 
   

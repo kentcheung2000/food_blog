@@ -4,7 +4,7 @@
    
    
       <% @outings.each do |outing| %>
-        <div class="outing-picture"><%= image_tag outing.outing_picture if outing.outing_picture.attached? %></div>
+        <div class="outing-picture"><%= image_tag outing.outing_picture.variant(resize: '100x100') if outing.outing_picture.attached? %></div>
         <div class="outing-details">
         <h4 class="outing-title"><%= link_to outing.description, outing_path(outing) %></h4>
         <h5 class="outing-description"><%= link_to outing.description, outing_path(outing) %></h5>
