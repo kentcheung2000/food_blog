@@ -25,22 +25,31 @@
 
 <%= render 'restaurant_foods/form' %>
 
+<div class="grid-container">
 
-<div class="restaurant-food-card">
 
-  <% @restaurant_foods.each do |restaurant_food| %>
-    <%= image_tag restaurant_food.food_picture, height: '20%', width: '20%'  if restaurant_food.food_picture.attached? %>
-    Food Name:  <%= restaurant_food.name %><br>
-    Food Description:  <%= restaurant_food.description %><br>
-    Food Pice:  <%= restaurant_food.price %><br>
+
  
-    <small> 
-      <% if can?(:delete, restaurant_food) %>
-        <%= link_to 'Delete', restaurant_food_path(restaurant_food), method: :delete %>
-      <% end %>
-    </small>
+    <% @restaurant_foods.each do |restaurant_food| %>
+      <div class="restaurant-food-card grid-item">
 
-  <% end %>
+      <div class="restaurant-food-picture"><%= image_tag restaurant_food.food_picture, width: '50%'  if restaurant_food.food_picture.attached? %></div>
+      <div class="restaurant-food-details">
+        <div class="restaurant-food-name">Food Name:  <%= restaurant_food.name %></div>
+        <div class="restaurant-food-description">Food Description:  <%= restaurant_food.description %></div>
+        <div class="restaurant-food-price">Food Pice:  <%= restaurant_food.price %></div>
+ 
+        <small> 
+        <% if can?(:delete, restaurant_food) %>
+          <%= link_to 'Delete', restaurant_food_path(restaurant_food), method: :delete %>
+        <% end %>
+        </small>
+      
+      </div>
+
+
+</div>
+<% end %>
 
 </div>
 
