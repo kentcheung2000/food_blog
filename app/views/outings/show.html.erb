@@ -1,43 +1,60 @@
-<h1>Show Outing </h1>
+<div class="container">
 
-<p>
 
-<h3> <%= @outing.description %> </h1></br>
-Meeting Date: <%=  @outing.meeting_date %></br>
-Meeting Time: <%=  @outing.meeting_time %></br>
-Total Spend: <%=  @outing.total %></br>
-Restaurant Name: <%=  @outing.restaurant.name %></br>
-Restaurant ID: <%=  @outing.restaurant.id %>
-<p>
-<p>
+<div class="outing-show">
 
-<div class="owner-controls mb-4">
+<div class="outing-picture"><%= image_tag @outing.outing_picture if @outing.outing_picture.attached? %></div>
+<h5 class="outing-description"> <%= @outing.description %> </h5>
+<p class="meeting-date">Meeting Date: <%=  @outing.meeting_date %></p>
+<p class="meeting-time">Meeting Time: <%=  @outing.meeting_time %></p>
+<p class="meeting-total-price">Total Spend: <%=  @outing.total %></p>
+<p class="meeting-restaurant-name">Restaurant Name: <%=  @outing.restaurant.name %></p>
+
+<br>
+</div>
+
+
+<p></p>
+
+
+<div>
     <% if can?(:crud, @outing) %>
-      <%= link_to "Edit", edit_outing_path(@outing), :class => "btn btn-outline-primary" %>
-      <%= link_to "Delete", outing_path(@outing), :class => "btn btn-outline-primary", method: :delete, data: {confirm: "Are you sure?"} %>  
+     <%= link_to "Edit", edit_outing_path(@outing) %> 
+      <%= link_to "Delete", outing_path(@outing), method: :delete, data: {confirm: "Are you sure?"} %>
     <% end %>
 </div>
 
-<p>
+<br>
 
+<br>
 <h3>Add Food Order</h3>
+
+<br>
+
 
 <%= render 'food_orders/form' %>
 
+<br>
+
 <% @food_orders.each do |food_order| %>
 
-  <p>
+  
   Food Name:  <%= food_order.restaurant_food.name %><br>
   Food Description:  <%= food_order.restaurant_food.description %><br>
-  Food Pice:  <%= food_order.restaurant_food.price %><br>
-  <p>
+  Food Pice:  <%= food_order.restaurant_food.price %>
+
 
   <% if can?(:delete, food_order) %>
-    <%= link_to 'Delete', food_order_path(food_order), method: :delete %>
+    <%= link_to 'Delete', food_order_path(food_order), method: :delete %> <br>
+   
   <% end %>
+  <br>
+  
 </small>
   
   
 
 <% end %>
+
+</div>
 

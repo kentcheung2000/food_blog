@@ -63,7 +63,7 @@ class OutingsController < ApplicationController
   end
 
   def outing_params
-    params.require(:outing).permit(:description, :meeting_date, :meeting_time, :total, :restaurant_id)  
+    params.require(:outing).permit(:description, :meeting_date, :meeting_time, :total, :restaurant_id, :outing_picture)  
   end
 
   def authorize_user!

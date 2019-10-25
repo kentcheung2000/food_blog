@@ -43,6 +43,10 @@ body {
 .hero-branding, .login {width: 50%; height: 50vh;  padding: 2em; display: flex; flex-direction: row; justify-content: center;
 align-items: center;}
 
+.restaurant-diary{
+  font-family: "Rock Salt", cursive;
+}
+
 a{
   text-decoration: none;
   color: #333;
@@ -53,13 +57,13 @@ strong{
 }
 
 /* heading style */
-
 h1,
 h2,
 h3,h4, h5 {
-  font-family: "Rock Salt", cursive;
+  //font-family: "Rock Salt", cursive;
   margin-bottom: .5em;
 }
+
 
 h1 {
   font-size: 3.052em;
@@ -80,16 +84,6 @@ h4 {
 h5 {
   font-size: 1.25em;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
