@@ -30,7 +30,7 @@ gem 'jquery-rails', '~> 4.3.1'
 
 
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'mini_magick'
 gem 'datetime_picker_input' 
 
